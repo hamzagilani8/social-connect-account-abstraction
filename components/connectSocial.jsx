@@ -14,8 +14,8 @@ function RpcProviderExample() {
   const createWallet = async () => {
     setLoading(true)
     const signer = await getZeroDevSigner({
-      projectId: "503df3e1-ab79-4058-a739-a5a2490ae163",
-      owner: await getSocialWalletOwner("503df3e1-ab79-4058-a739-a5a2490ae163", socialWallet)
+      projectId: process.env.PROJECT_ID,
+      owner: await getSocialWalletOwner(process.env.PROJECT_ID, socialWallet)
     })
     setAddress(await signer.getAddress())
     setLoading(false)
